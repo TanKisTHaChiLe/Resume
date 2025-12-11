@@ -39,6 +39,7 @@
   font-weight: bold;
   box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
   transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 .print-button:hover {
@@ -357,6 +358,27 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Медиа-запросы для адаптивности */
+
+/* Для планшетов */
+@media (max-width: 1024px) {
+  .page_content {
+    width: 90%;
+    padding: 25px;
+  }
+
+  .donwload_buttons-container {
+    right: 15px;
+    top: 15px;
+  }
+
+  .print-button {
+    padding: 10px 18px;
+    font-size: 15px;
+  }
+}
+
+/* Для мобильных устройств - ОСНОВНОЕ ИСПРАВЛЕНИЕ */
 @media (max-width: 768px) {
   .page_content {
     width: 95%;
@@ -367,6 +389,32 @@ html {
     padding: 20px;
     transform: translateY(0);
     animation: fadeInUp 0.6s ease-out 0.3s forwards;
+    margin-top: 80px; /* Отступ для кнопок */
+  }
+
+  /* Исправленные кнопки на мобильных */
+  .donwload_buttons-container {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    flex-direction: row;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    margin: 0;
+  }
+
+  .print-button {
+    padding: 8px 16px;
+    font-size: 14px;
+    flex: 1;
+    max-width: 160px;
+    white-space: nowrap;
+    margin: 0 5px;
   }
 
   .page_content__profile-photo {
@@ -535,12 +583,27 @@ html {
   }
 }
 
+/* Для маленьких мобильных устройств */
 @media (max-width: 480px) {
   .page_content {
     padding: 15px;
     margin: 10px auto;
     border-radius: 16px;
     gap: 15px;
+    margin-top: 70px; /* Меньший отступ для кнопок */
+  }
+
+  .donwload_buttons-container {
+    top: 5px;
+    right: 5px;
+    left: 5px;
+    padding: 8px;
+  }
+
+  .print-button {
+    padding: 8px 12px;
+    font-size: 13px;
+    max-width: 140px;
   }
 
   .page_content__profile-photo {
@@ -578,9 +641,28 @@ html {
   }
 }
 
-@media print {
+@media (max-width: 360px) {
+  .donwload_buttons-container {
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+  }
+
   .print-button {
-    display: none;
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+  }
+
+  .page_content {
+    margin-top: 100px;
+  }
+}
+
+@media print {
+  .donwload_buttons-container,
+  .print-button {
+    display: none !important;
   }
 
   body,
@@ -785,7 +867,6 @@ html {
     transform: none;
   }
 
-  /* Убираем все hover-эффекты и анимации для печати */
   .contacts__link:hover,
   .article:hover,
   .page_content__profile-photo:hover,
