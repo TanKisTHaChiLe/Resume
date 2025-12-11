@@ -1,0 +1,825 @@
+.page {
+  background-color: #fcfcfc;
+  font-family: "Arial", sans-serif;
+  line-height: 1.4;
+  color: #333;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.donwload_buttons-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.print-button {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+  transition: all 0.3s ease;
+}
+
+.print-button:hover {
+  background: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+}
+
+.page_content {
+  width: 750px;
+  margin: 50px auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto auto auto;
+  gap: 20px;
+  padding: 30px;
+  background-color: #ffffff;
+  border: 1px solid #2c3e50;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(44, 62, 80, 0.1);
+  transform: translateY(30px);
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.3s forwards;
+}
+
+.page_content__profile-photo {
+  grid-column: 2 / 3;
+  grid-row: 1 / 3;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #2c3e50;
+  justify-self: end;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: scale(0.95);
+  opacity: 0;
+  animation: fadeInScale 0.6s ease-out 0.6s forwards;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95) rotate(-5deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.page_content__profile-photo:hover {
+  transform: scale(1.05) rotate(2deg);
+  box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
+  border-color: #3498db;
+}
+
+.main_title {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0;
+  color: #2c3e50;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideInFromLeft 0.7s ease-out 0.4s forwards;
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.contacts_container {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 15px;
+  margin-bottom: 10px;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out 0.5s forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contacts_title {
+  font-size: 18px;
+  font-weight: normal;
+  color: #7f8c8d;
+  margin: 0 0 10px 0;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.contacts__link {
+  color: #2c3e50;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-left: 0;
+}
+
+.contacts__link:hover {
+  color: #3498db;
+  transform: translateX(5px);
+  padding-left: 8px;
+}
+
+.contacts__link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 2px;
+  background: #3498db;
+  transition: width 0.3s ease;
+  transform: translateY(-50%);
+}
+
+.contacts__link:hover::before {
+  width: 6px;
+}
+
+section {
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.section_education {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+  animation-delay: 0.7s;
+}
+
+.secction_pet-projects {
+  grid-column: 1 / 2;
+  grid-row: 3 / 5;
+  align-self: end;
+  animation-delay: 0.8s;
+}
+
+.section_scills {
+  grid-column: 2 / 3;
+  grid-row: 4 / 5;
+  align-self: end;
+  animation-delay: 0.9s;
+}
+
+.section_title,
+h2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.section_title::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #e74c3c;
+  transition: width 0.4s ease;
+}
+
+.section_title:hover::after {
+  width: 100%;
+}
+
+.article_container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+
+.education-date {
+  font-size: 12px;
+  color: #7f8c8d;
+  font-weight: bold;
+}
+
+.section_education-aricle__title,
+.projects-aricle__title,
+.scills_action-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 5px 0;
+  color: #2c3e50;
+  transition: color 0.3s ease;
+}
+
+.section_education-aricle__text,
+.projects-aricle__text,
+.scills_action-text,
+.text {
+  font-size: 14px;
+  color: #555;
+  margin: 0;
+}
+
+.pet-projects_list,
+.scills_list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pet-projects_list-item,
+.scills_list-item {
+  margin-bottom: 15px;
+  opacity: 0;
+  animation: slideInFromLeft 0.5s ease-out forwards;
+}
+
+.pet-projects_list-item:nth-child(1) {
+  animation-delay: 1s;
+}
+.pet-projects_list-item:nth-child(2) {
+  animation-delay: 1.1s;
+}
+.pet-projects_list-item:nth-child(3) {
+  animation-delay: 1.2s;
+}
+
+.article {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px solid #515151;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.article:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 20px rgba(52, 152, 219, 0.15);
+  border-color: #3498db;
+}
+
+.article:hover .projects-aricle__title {
+  color: #3498db;
+}
+
+.projects-aricle_list-stack {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.projects-aricle_list-item {
+  background: #3498db;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  transition: all 0.3s ease;
+  transform: scale(0.9);
+  opacity: 0;
+  animation: fadeInScale 0.4s ease-out forwards;
+}
+
+.projects-aricle_list-item:hover {
+  background: #2980b9;
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(41, 128, 185, 0.4);
+}
+
+.scills_list-item:nth-child(1) {
+  animation-delay: 1.3s;
+}
+.scills_list-item:nth-child(2) {
+  animation-delay: 1.4s;
+}
+.scills_list-item:nth-child(3) {
+  animation-delay: 1.5s;
+}
+
+.scills_list-item:hover .scills_action-title {
+  color: #3498db;
+  transform: translateX(5px);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 768px) {
+  .page_content {
+    width: 95%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    transform: translateY(0);
+    animation: fadeInUp 0.6s ease-out 0.3s forwards;
+  }
+
+  .page_content__profile-photo {
+    grid-column: 1;
+    grid-row: auto;
+    width: 150px;
+    height: 150px;
+    justify-self: center;
+    margin: 0 auto 20px auto;
+    order: 1;
+    animation: fadeInScale 0.5s ease-out 0.4s forwards;
+  }
+
+  .page_content__profile-photo:hover {
+    transform: scale(1.03);
+  }
+
+  .main_title {
+    grid-column: 1;
+    grid-row: auto;
+    font-size: 24px;
+    text-align: center;
+    margin: 0 0 15px 0;
+    order: 2;
+    transform: translateX(0);
+    animation: fadeInUp 0.5s ease-out 0.5s forwards;
+  }
+
+  .contacts_container {
+    grid-column: 1;
+    grid-row: auto;
+    text-align: center;
+    margin: 0 0 25px 0;
+    order: 3;
+    animation: fadeInUp 0.5s ease-out 0.6s forwards;
+  }
+
+  .contacts {
+    align-items: center;
+  }
+
+  .contacts__link {
+    font-size: 14px;
+    padding: 5px 0;
+  }
+
+  .contacts__link:hover {
+    transform: none;
+    padding-left: 0;
+  }
+
+  .contacts__link:hover::before {
+    width: 0;
+  }
+
+  .section_education,
+  .secction_pet-projects,
+  .section_scills {
+    grid-column: 1;
+    grid-row: auto;
+    width: 100%;
+    align-self: stretch;
+    margin-bottom: 25px;
+  }
+
+  .section_education {
+    order: 4;
+    animation-delay: 0.7s;
+  }
+
+  .secction_pet-projects {
+    order: 5;
+    animation-delay: 0.8s;
+  }
+
+  .section_scills {
+    order: 6;
+    animation-delay: 0.9s;
+  }
+
+  .section_title,
+  h2 {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .section_title::after {
+    display: none;
+  }
+
+  .article_container {
+    row-gap: 12px;
+  }
+
+  .section_education-aricle__title,
+  .projects-aricle__title,
+  .scills_action-title {
+    font-size: 15px;
+  }
+
+  .section_education-aricle__text,
+  .projects-aricle__text,
+  .scills_action-text,
+  .text {
+    font-size: 13px;
+  }
+
+  .education-date {
+    font-size: 11px;
+  }
+
+  .pet-projects_list,
+  .scills_list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .pet-projects_list-item,
+  .scills_list-item {
+    margin-bottom: 0;
+    animation: fadeInUp 0.5s ease-out forwards;
+  }
+
+  .pet-projects_list-item:nth-child(1) {
+    animation-delay: 1s;
+  }
+  .pet-projects_list-item:nth-child(2) {
+    animation-delay: 1.1s;
+  }
+  .pet-projects_list-item:nth-child(3) {
+    animation-delay: 1.2s;
+  }
+
+  .article {
+    padding: 12px;
+    margin: 0;
+  }
+
+  .article:hover {
+    transform: none;
+    box-shadow: 0 2px 10px rgba(52, 152, 219, 0.1);
+  }
+
+  .projects-aricle_list-stack {
+    gap: 6px;
+  }
+
+  .projects-aricle_list-item {
+    font-size: 11px;
+    padding: 3px 6px;
+  }
+
+  .scills_list-item:nth-child(1) {
+    animation-delay: 1.3s;
+  }
+  .scills_list-item:nth-child(2) {
+    animation-delay: 1.4s;
+  }
+  .scills_list-item:nth-child(3) {
+    animation-delay: 1.5s;
+  }
+
+  .scills_list-item:hover .scills_action-title {
+    transform: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .page_content {
+    padding: 15px;
+    margin: 10px auto;
+    border-radius: 16px;
+    gap: 15px;
+  }
+
+  .page_content__profile-photo {
+    width: 120px;
+    height: 120px;
+  }
+
+  .main_title {
+    font-size: 22px;
+  }
+
+  .contacts__link {
+    font-size: 13px;
+  }
+
+  .section_title,
+  h2 {
+    font-size: 17px;
+  }
+
+  .projects-aricle__text,
+  .scills_action-text,
+  .section_education-aricle__text {
+    font-size: 12px;
+  }
+
+  .projects-aricle__title,
+  .scills_action-title,
+  .section_education-aricle__title {
+    font-size: 14px;
+  }
+
+  .article {
+    padding: 10px;
+  }
+}
+
+@media print {
+  .print-button {
+    display: none;
+  }
+
+  body,
+  .page {
+    background: white;
+    margin: 0;
+    padding: 0;
+    width: 210mm;
+    height: 297mm;
+  }
+
+  .page {
+    animation: none;
+    opacity: 1;
+    width: 210mm;
+    height: 297mm;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fcfcfc;
+    font-family: "Arial", sans-serif;
+    line-height: 1.4;
+    color: #333;
+  }
+
+  .page_content {
+    width: 750px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto auto auto;
+    gap: 20px;
+    padding: 30px;
+    background-color: #ffffff;
+    border: 1px solid #2c3e50;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(44, 62, 80, 0.1);
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .page_content__profile-photo {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #2c3e50;
+    justify-self: end;
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .main_title {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+    color: #2c3e50;
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .contacts_container {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+    animation: none;
+    opacity: 1;
+  }
+
+  .contacts_title {
+    font-size: 18px;
+    font-weight: normal;
+    color: #7f8c8d;
+    margin: 0 0 10px 0;
+  }
+
+  .contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .contacts__link {
+    color: #2c3e50;
+    text-decoration: none;
+    font-size: 14px;
+  }
+
+  section {
+    margin-bottom: 20px;
+    animation: none;
+    opacity: 1;
+  }
+
+  .section_education {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+  }
+
+  .secction_pet-projects {
+    grid-column: 1 / 2;
+    grid-row: 3 / 5;
+    align-self: end;
+  }
+
+  .section_scills {
+    grid-column: 2 / 3;
+    grid-row: 4 / 5;
+    align-self: end;
+  }
+
+  .section_title,
+  h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .article_container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+  }
+
+  .education-date {
+    font-size: 12px;
+    color: #7f8c8d;
+    font-weight: bold;
+  }
+
+  .section_education-aricle__title,
+  .projects-aricle__title,
+  .scills_action-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 5px 0;
+    color: #2c3e50;
+  }
+
+  .section_education-aricle__text,
+  .projects-aricle__text,
+  .scills_action-text,
+  .text {
+    font-size: 14px;
+    color: #555;
+    margin: 0;
+  }
+
+  .pet-projects_list,
+  .scills_list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .pet-projects_list-item,
+  .scills_list-item {
+    margin-bottom: 15px;
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .article {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #515151;
+  }
+
+  .projects-aricle_list-stack {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .projects-aricle_list-item {
+    background: #3498db;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Убираем все hover-эффекты и анимации для печати */
+  .contacts__link:hover,
+  .article:hover,
+  .page_content__profile-photo:hover,
+  .projects-aricle_list-item:hover,
+  .scills_list-item:hover .scills_action-title,
+  .section_title:hover::after {
+    transform: none;
+    box-shadow: none;
+    border-color: inherit;
+    color: inherit;
+    padding-left: 0;
+  }
+
+  .contacts__link::before,
+  .section_title::after {
+    display: none;
+  }
+
+  @page {
+    margin: 0;
+    size: A4;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page_content {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}

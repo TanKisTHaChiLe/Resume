@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./fonts/fonts.css" />
+    <link rel="stylesheet" href="./styles/globals.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <title>Resume</title>
+  </head>
+  <body class="page">
+    <div class="donwload_buttons-container">
+      <button class="print-button" onclick="window.print()">🖨️ Печать</button>
+      <a href="./assets/Резюме.pdf" download="Резюме Ланец.А.Н.pdf"
+        ><button class="print-button">Скачать резюме</button></a
+      >
+    </div>
+
+    <main class="page_content">
+      <img
+        id="profile-photo"
+        src="./images/profile-photo.jpg"
+        alt="фото профиля"
+        class="page_content__profile-photo"
+      />
+      <h1 id="name" class="main_title">Ланец Артем</h1>
+      <div id="profile-information" class="contacts_container">
+        <h2 class="contacts_title">Frontend-developer</h2>
+        <address class="contacts">
+          <a class="contacts__link" href="tel:+79628738706">+7 962 873 87 06</a>
+          <a class="contacts__link" href="mailto:lanetsarn@yandex.ru"
+            >lanetsarn@yandex.ru</a
+          >
+        </address>
+      </div>
+      <section id="education" class="section_education">
+        <h2 class="section_title">Образование</h2>
+        <div class="article_container">
+          <article class="section_education-aricle article">
+            <div class="section_education-aricle__container">
+              <span class="education-date">2024-2028</span>
+              <h3 class="section_education-aricle__title">
+                Fullstack-разработка
+              </h3>
+              <p class="section_education-aricle__text text">
+                РТУ МИРЭА - Российский технологический университет
+              </p>
+            </div>
+          </article>
+          <article class="section_education-aricle article">
+            <div class="section_education-aricle__container">
+              <span class="education-date">2025-2026</span>
+              <h3 class="section_education-aricle__title">
+                Frontend-разработка
+              </h3>
+              <p class="section_education-aricle__text text">Т-Академия</p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section id="pet-projects" class="secction_pet-projects">
+        <h2>Пет-проекты</h2>
+        <ul class="pet-projects_list">
+          <li class="pet-projects_list-item">
+            <article class="projects-aricle article">
+              <div class="projects-aricle__container">
+                <h3 class="projects-aricle__title">VK-contest-movie-app</h3>
+                <p class="projects-aricle__text text">
+                  В этом проекте применял современный стек технологий: React с
+                  TypeScript для типизации, стейт-менеджер MobX для эффективного
+                  управления состоянием приложения, REST API через Axios для
+                  серверных запросов. Реализовал следующий функционал: гибкий
+                  поиск по названию, комплексную фильтрацию по жанрам и годам,
+                  пагинацию контента, а также механизм добавления в избранное.
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="pet-projects_list-item">
+            <article class="projects-aricle article">
+              <div class="projects-aricle__container">
+                <h3 class="projects-aricle__title">Веб-Ларек</h3>
+                <p class="projects-aricle__text text">
+                  Одностраничное приложение (SPA) – интернет-магазин товаров.
+                  Проект реализован на чистой архитектуре и собственной
+                  реализации паттернов без использования внешних фреймворков.
+                  Реализован полный цикл от выбора товара до оформления и
+                  валидации заказа.
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="pet-projects_list-item">
+            <article class="projects-aricle article">
+              <div class="projects-aricle__container">
+                <h3 class="projects-aricle__title">Stellar Burgers</h3>
+                <p class="projects-aricle__text text">
+                  Веб-приложение «Stellar Burgers» представляет собой сервис для
+                  заказа бургеров, разработанный на современном стеке
+                  технологий: React/TypeScript, стейт-менеджер Redux Toolkit для
+                  управления состоянием и React Router для клиентской
+                  маршрутизации с взаимодействием через REST API.
+                </p>
+              </div>
+            </article>
+          </li>
+        </ul>
+      </section>
+      <section id="scills" class="section_scills">
+        <h2>Навыки</h2>
+
+        <ul class="scills_list">
+          <li class="scills_list-item">
+            <article class="scills_action article">
+              <div class="scills_action__container">
+                <h3 class="scills_action-title">Front-end</h3>
+                <p class="scills_action-text">
+                  JavaScript, TypeScript, HTML, CSS/SCSS, Jest.js, Cypress, React, Redux,
+                  MobX
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="scills_list-item">
+            <article class="scills_action article">
+              <div class="scills_action__container">
+                <h3 class="scills_action-title">Сопутствующие технологии</h3>
+                <p class="scills_action-text">
+                  Docker, PostgreSQL, Linux, Figma, Webpack, Vite
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="scills_list-item">
+            <article class="scills_action article">
+              <div class="scills_action__container">
+                <h3 class="scills_action-title">Full-stack разработка</h3>
+                <p class="scills_action-text">
+                  Создание административных панелей и CRM систем с
+                  backend-логикой и современным фронтендом.
+                </p>
+              </div>
+            </article>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <script>
+      document
+        .querySelector(".print-button")
+        .addEventListener("click", function () {
+          window.print();
+        });
+    </script>
+  </body>
+</html>
