@@ -6,11 +6,10 @@
   padding: 0;
 }
 
-html,
-body {
-  width: 100%;
+html, body {
+  margin: 0;
+  padding: 0;
   height: 100%;
-  overflow-x: hidden;
 }
 
 body {
@@ -47,4 +46,71 @@ a {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+}
+
+.page {
+  background-color: #fcfcfc;
+  font-family: "Arial", sans-serif;
+  line-height: 1.4;
+  color: #333;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media print {
+  body {
+    padding-top: 0;
+  }
+
+  body,
+  .page {
+    background: white;
+    margin: 0;
+    padding: 0;
+    width: 210mm;
+    height: 297mm;
+  }
+
+  .page {
+    animation: none;
+    opacity: 1;
+    width: 210mm;
+    height: 297mm;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fcfcfc;
+    font-family: "Arial", sans-serif;
+    line-height: 1.4;
+    color: #333;
+  }
+
+  @page {
+    margin: 0;
+    size: A4;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
 }
